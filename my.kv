@@ -1,0 +1,1132 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+
+WindowManager:
+
+    transition: NoTransition()
+    WindowSum:
+    WindowCoin:
+    WindowQr:
+    WindowVerifmain:
+    WindowVeriftick:
+    WindowVerifcros:
+    LoadingScreen:
+    Eroare:
+    WindowPassword:
+
+
+<Eroare>
+
+    name: "eroare"
+
+    texterror: texterror
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding:0
+        spacing:0
+
+        BoxLayout:
+            Label:
+                id:texterror
+                color: 0,0,0,1
+                font_size: 50
+                font_name:"exobold"
+                text: "  Suma este insuficienta! \n Minimul este de 10 RON."
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.2}
+                size_hint: (.5, 1)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+        BoxLayout:
+            RoundedButton:
+                id: termina
+                font_size:70
+                font_name:"exobold"
+                color: 0,0,0,1
+                text:"OK"
+                on_press:
+                    root.manager.transition.direction = "right"
+                    root.restart()
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.1}
+                size_hint: (.5, .27)
+                on_release: app.root.current = "wsum"
+
+<LoadingScreen>:
+
+    name: "LoadingScreen"
+    Image:
+        source: 'load.jpg'
+        anim_delay: 0.02
+        allow_stretch: True
+        keep_ratio: False
+        keep_data: True
+
+
+
+<WindowSum>:
+
+    name: "wsum"
+
+    entry: entry
+    button1: button1
+    button2: button2
+    button3: button3
+    button4: button4
+    button5: button5
+    button6: button6
+    button7: button7
+    button8: button8
+    button9: button9
+    button0: button0
+    buttonerase: buttonerase
+    plata: plata
+
+
+
+   # canvas.before:
+    #    Rectangle:
+     #       pos: self.pos
+      #      size: self.size
+         #   source: 'fundal.png'
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding:0
+        spacing:0
+
+
+        BoxLayout:
+            TextInput:
+                id: entry
+                text: "0.00"
+                text_color: 0,0,0,1
+                color: 1,1,0,1
+                font_size: 100
+                font_name:"segoe"
+                multiline: False
+                foreground_color: (75/255, 178/255, 123/255, 1)
+                background_color: (0,0,0,0)
+                halign: 'center'
+                valign: 'middle'
+
+
+        BoxLayout:
+
+            RoundedButton:
+                id: button1
+                text: "1"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(1)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: button2
+                text: "2"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(2)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: button3
+                text: "3"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(3)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+        BoxLayout:
+
+            RoundedButton:
+                id: button4
+                text: "4"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(4)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: button5
+                text: "5"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(5)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: button6
+                text: "6"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(6)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+        BoxLayout:
+
+            RoundedButton:
+                id: button7
+                text: "7"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(7)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: button8
+                text: "8"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(8)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: button9
+                text: "9"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(9)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+        BoxLayout:
+
+
+            RoundedButton:
+                id: button0
+                text: "0"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btn(0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.4}
+                size_hint: (.45, .5)
+
+
+            RoundedButton:
+                id: buttonerase
+                text: "STERGE"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.btners()
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.4}
+                size_hint: (.55, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: '''
+
+
+
+
+        BoxLayout:
+
+            Plata:
+                id: plata
+                text: "PLATA"
+                color: 0, 0, 0, 1
+                font_size:50
+                font_name:"exobold"
+                on_release: root.b()
+                on_press:
+                    root.manager.transition.direction = "left"
+                    app.root.current = "LoadingScreen"
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.27}
+                size_hint: (2, .8)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+
+
+<WindowCoin>:
+
+    name: "wcoin"
+
+    buttonbtc: buttonbtc
+    buttoneth: buttoneth
+    buttonltc: buttonltc
+    buttondash: buttondash
+    buttonusdt: buttonusdt
+    buttonsks: buttonsks
+
+    labelbtc: labelbtc
+    labeleth: labeleth
+    labelltc: labelltc
+    labeldash: labeldash
+    labelusdt: labelusdt
+    labelsks: labelsks
+    back: back
+
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding:0
+        spacing:0
+
+        BoxLayout:
+
+            RoundedButton:
+                id:back
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.65}
+                size_hint: (.8, .55)
+                text: "BACK"
+                color: 0, 0, 0, 1
+                font_size:30
+                font_name:"exobold"
+                on_press:
+                    app.root.current = "wsum"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                color: 1,1,1,0
+            Label:
+                color: 1,1,1,0
+
+
+
+
+        BoxLayout:
+
+
+            ToggleButton:
+                id: buttonbtc
+                on_press:
+                    root.buttonstatebtc()
+                    root.btcwall()
+                font_size:32
+                text: 'Bitcoin'
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                background_normal: ''
+                background_color: (0,0,0,0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.5}
+                size_hint: (.5, 1.2)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+
+
+            ToggleButton:
+                id: buttoneth
+                on_press:
+                    root.buttonstateeth()
+                    root.ethwall()
+                font_size:32
+                text: 'Ethereum'
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                background_normal: ''
+                background_color: (0,0,0,0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.5}
+                size_hint: (.5, 1.2)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else  (30/255, 123/255, 73/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+
+        BoxLayout:
+            Label:
+                id: labelbtc
+                text: ''
+                color: 75/255, 178/255, 123/255, 1
+                font_size:25
+                font_name:"exo"
+                size: self.texture_size
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.7}
+
+            Label:
+                id: labeleth
+                text: ''
+                color: 75/255, 178/255, 123/255, 1
+                font_size:25
+                font_name:"exo"
+                size: self.texture_size
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.7}
+
+
+        BoxLayout:
+
+
+            ToggleButton:
+                id: buttonltc
+                on_press:
+                    root.buttonstateltc()
+                    root.ltcwall()
+                font_size:32
+                text: 'Litecoin'
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                background_normal: ''
+                background_color: (0,0,0,0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.5}
+                size_hint: (.5, 1.2)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+            ToggleButton:
+                id: buttondash
+                on_press:
+                    root.dashwall()
+                    root.buttonstatedash()
+                font_size:32
+                text: 'Dash'
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                background_normal: ''
+                background_color: (0,0,0,0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.5}
+                size_hint: (.5, 1.2)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+
+        BoxLayout:
+            Label:
+                id: labelltc
+                text: ''
+                color: 75/255, 178/255, 123/255, 1
+                font_size:25
+                font_name:"exo"
+                size: self.texture_size
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.7}
+
+            Label:
+                id: labeldash
+                text: ''
+                color: 75/255, 178/255, 123/255, 1
+                font_size:25
+                font_name:"exo"
+                size: self.texture_size
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.7}
+
+
+
+        BoxLayout:
+
+
+            ToggleButton:
+                id: buttonusdt
+                on_press:
+                    root.usdtwall()
+                    root.buttonstateusdt()
+                font_size:32
+                text: "USDT"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                background_normal: ''
+                background_color: (0,0,0,0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.5}
+                size_hint: (.5, 1.2)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+
+
+            ToggleButton:
+                id: buttonsks
+                font_size:32
+                text: 'Synckies'
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                background_normal: ''
+                background_color: (0,0,0,0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.5}
+                size_hint: (.5, 1.2)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+
+        BoxLayout:
+            Label:
+                id: labelusdt
+                text: ''
+                font_size:25
+                font_name:"exo"
+                color: 75/255, 178/255, 123/255, 1
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.7}
+                canvas.before:
+                    Color:
+                        rgba: 0, 1, 0, 0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                id: labelsks
+                text: ''
+                font_size:25
+                font_name:"exo"
+                color: 75/255, 178/255, 123/255, 1
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.7}
+                canvas.before:
+                    Color:
+                        rgba: 0, 1, 0, 0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+        BoxLayout:
+
+            RoundedButton:
+                id: buttonfin
+                text: "FINALIZEAZA"
+                color: 0, 0, 0, 1
+                font_size:50
+                font_pos:
+                font_name:"exobold"
+                on_press:
+                    root.manager.transition.direction = "left"
+                    app.root.current = "wqr"
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.4}
+                size_hint: (.5, 1.2)
+
+
+
+
+
+
+<WindowQr>
+
+
+
+    name: "wqr"
+
+    coinverify: coinverify
+    qrlog: qrlog
+    wallet: wallet
+    platit: platit
+    cancel:cancel
+
+
+
+    BoxLayout:
+
+
+
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding:0
+        spacing:0
+
+
+        BoxLayout:
+
+            RoundedButton:
+                id:back
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.8}
+                text: "BACK"
+                color: 0, 0, 0, 1
+                font_size:30
+                font_name:"exobold"
+                size_hint: (.8, .35)
+                on_press:
+                    app.root.current = "wcoin"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                color: 1,1,1,0
+            RoundedButton:
+                id:cancel
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.8}
+                text: "CANCEL"
+                color: 0, 0, 0, 1
+                font_size:30
+                font_name:"exobold"
+                size_hint: (.8, .35)
+                on_press: app.root.current = "wpswd"
+
+
+
+        BoxLayout:
+            Label:
+                id: coinverify
+                color: 0, 0, 0, 1
+                font_size:33
+                font_name:"exobold"
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 1.3}
+                size_hint: (.5, 0.5)
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+
+        BoxLayout:
+
+            Round:
+                id: qrlog
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.75}
+                size_hint: (.5, 2.4)
+                background_normal: ''
+                background_color: (75/255, 178/255, 123/255, 0)
+                data: ""
+                show_border: False
+
+
+
+
+
+
+        BoxLayout:
+            Label:
+                id: wallet
+                text: ''
+                font_size:28
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.2}
+                size_hint: (.5, .5)
+                font_name:"exobold"
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Rectangle:
+                        pos: self.center_x - 50, self.center_y - 50 # default size is 100x100
+                        #source: 'test.png'
+                canvas.before:
+                    Color:
+                        rgba: (75/255, 178/255, 123/255, 1)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]
+
+        BoxLayout:
+            RoundedButton:
+                id: platit
+                text: "PLATIT"
+                color: 0, 0, 0, 1
+                font_size:50
+                font_name:"exobold"
+                on_release:
+                    root.manager.transition.direction = "left"
+                    app.root.current = "wvrf"
+                on_press:
+                    root.clk()
+                    #root.prog()
+                    #root.res()
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.25}
+                size_hint: (.5, .7)
+
+
+<WindowPassword>:
+
+    name: "wpswd"
+
+    eentry: eentry
+    bbutton1: bbutton1
+    bbutton2: bbutton2
+    bbutton3: bbutton3
+    bbutton4: bbutton4
+    bbutton5: bbutton5
+    bbutton6: bbutton6
+    bbutton7: bbutton7
+    bbutton8: bbutton8
+    bbutton9: bbutton9
+    bbutton0: bbutton0
+    bbuttonerase: bbuttonerase
+    sterge: sterge
+
+
+
+   # canvas.before:
+    #    Rectangle:
+     #       pos: self.pos
+      #      size: self.size
+         #   source: 'fundal.png'
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding:0
+        spacing:0
+
+        BoxLayout:
+
+            RoundedButton:
+                id:back
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.8}
+                text: "BACK"
+                color: 0, 0, 0, 1
+                font_size:30
+                font_name:"exobold"
+                size_hint: (.8, .4)
+                on_press:
+                    app.root.current = "wqr"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                color: 1,1,1,0
+            Label:
+                color: 1,1,1,0
+
+        BoxLayout:
+            TextInput:
+                id: eentry
+                text: ""
+                text_color: 0,0,0,1
+                color: 1,1,0,1
+                font_size: 80
+                font_name:"segoe"
+                multiline: False
+                foreground_color: (75/255, 178/255, 123/255, 1)
+                background_color: (0,0,0,0)
+                halign: 'center'
+                valign: 'middle'
+
+
+        BoxLayout:
+
+            RoundedButton:
+                id: bbutton1
+                text: "1"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(1)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: bbutton2
+                text: "2"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(2)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: bbutton3
+                text: "3"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(3)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+        BoxLayout:
+
+            RoundedButton:
+                id: bbutton4
+                text: "4"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(4)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: bbutton5
+                text: "5"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(5)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: bbutton6
+                text: "6"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(6)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+        BoxLayout:
+
+            RoundedButton:
+                id: bbutton7
+                text: "7"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(7)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: bbutton8
+                text: "8"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(8)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+            RoundedButton:
+                id: bbutton9
+                text: "9"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(9)
+                pos_hint: {'center_x': 0.5}
+                size_hint: (.5, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+        BoxLayout:
+
+
+            RoundedButton:
+                id: bbutton0
+                text: "0"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.comp(0)
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.4}
+                size_hint: (.45, .5)
+
+
+            RoundedButton:
+                id: bbuttonerase
+                text: "STERGE"
+                color: 0, 0, 0, 1
+                font_size:32
+                font_name:"exobold"
+                on_press: root.ster()
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.4}
+                size_hint: (.55, .5)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: '''
+
+
+
+
+        BoxLayout:
+
+            Plata:
+                id: sterge
+                text: "APLICA"
+                color: 0, 0, 0, 1
+                font_size:50
+                font_name:"exobold"
+                on_release: root.ver()
+                on_press: root.manager.transition.direction = "left"
+                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_y': 0.27}
+                size_hint: (2, .8)
+                #background_color: (0/255, 255/255, 151/255, 1)
+                #background_normal: ''
+
+
+
+<WindowVerifmain>
+
+
+    name: "wvrf"
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'main2.jpg'
+
+<WindowVeriftick>
+
+
+
+    name: "wvrft"
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'ver.jpg'
+
+
+<WindowVerifcros>
+
+
+    name: "wvrfc"
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'cros.jpg'
+
+
+<MyTextInput@TextInput>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (0/255, 255/255, 151/255, 0.2)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+<RButton@Button>
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (75/255, 178/255, 123/255, 1)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<Plata@Button>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (75/255, 178/255, 123/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+<Afisare@TextInput>
+
+    background_color:(0,0,0,1)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (0/255, 0/255, 0/255, 0)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+
+
+<CoinButtonBTC@ToggleButton>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgb: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+<CoinButtonETH@ToggleButton>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgb: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+
+<CoinButtonLTC@ToggleButton>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+<CoinButtonTRX@ToggleButton>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgb: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+
+<CoinButtonUSDT@ToggleButton>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgb: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+<CoinButtonSKS@ToggleButton>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgb: (75/255, 178/255, 123/255, 1) if self.state == 'normal' else (30/255, 123/255, 73/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+<RoundedButton@Button>
+
+    background_color:(0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (75/255, 178/255, 123/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]
+
+
+<Round@QRCodeWidget>
+    background_color:(0,0,0,0)
+
+    canvas.before:
+        Color:
+            rgba: (75/255, 178/255, 123/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [40]
